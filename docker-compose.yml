@@ -5,10 +5,11 @@ services:
         env_file: .env
         volumes:
             - ./etc/odoo:/etc/odoo
+            - ./addons:/mnt/addons
             - ./extra-addons:/mnt/extra-addons
             - ./var/lib/odoo:/var/lib/odoo
         ports:
-            - 8069:8069
+            - 8090:8069
         depends_on:
             - odoo-postgres
         networks:
